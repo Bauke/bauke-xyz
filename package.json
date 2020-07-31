@@ -7,6 +7,7 @@
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html css'",
     "build": "cpy '**' '../public/' --cwd='source' --parents && yarn build:css",
     "build:css": "cpy 'node_modules/modern-normalize/modern-normalize.css' 'public/css/'",
     "test": "stylelint 'source/css/*.css'",
@@ -20,6 +21,7 @@
     "cpy-cli": "^3.1.1",
     "husky": "^4.2.5",
     "netlify-cli": "^2.58.0",
+    "nodemon": "^2.0.4",
     "stylelint": "^13.6.1",
     "stylelint-config-xo-space": "^0.14.0"
   },
