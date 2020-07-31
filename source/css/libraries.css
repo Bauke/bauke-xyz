@@ -1,0 +1,43 @@
+.libraries {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.libraries li {
+  background-color: #2a2041;
+  padding: 16px;
+}
+
+.libraries a {
+  margin-bottom: 8px;
+}
+
+.libraries a:hover {
+  background-color: #3bd18a;
+}
+
+.libraries .badges {
+  display: flex;
+  gap: 8px;
+}
+
+#npm,
+.libraries li.npm {
+  border: 1px solid #f99fb1;
+}
+
+.npm a {
+  background-color: #f99fb1;
+  color: #1f1731;
+}
+
+#crates,
+.libraries li.crates {
+  border: 1px solid #96c839;
+}
+
+.crates a {
+  background-color: #96c839;
+  color: #1f1731;
+}
