@@ -8,6 +8,8 @@
 
 To build the site [Node](https://nodejs.org) and [Yarn](https://yarnpkg.com) are required.
 
+Make sure the dependencies are installed in the project root and the submodules with `yarn --silent`. For more information see the [`.gitkeep` file in `submodules/`](https://git.holllo.cc/Bauke/bauke.xyz/src/branch/main/submodules/.gitkeep).
+
 Then, run `yarn build`. The site will be built to the `public/` directory.
 
 ## License

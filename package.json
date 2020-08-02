@@ -1,16 +1,17 @@
 {
   "name": "bauke.xyz",
   "description": "My personal website.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Bauke <me@bauke.xyz>",
   "homepage": "https://bauke.xyz",
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
   "license": "MIT",
   "scripts": {
     "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html css'",
-    "build": "cpy '**' '../public/' --cwd='source' --parents && yarn build:css",
+    "build": "cpy '**' '!index.js' '!userstyles/*' '../public/' --cwd='source' --parents && yarn build:css && yarn build:userstyles",
     "build:css": "cpy 'node_modules/modern-normalize/modern-normalize.css' 'public/css/'",
-    "test": "stylelint 'source/css/*.css'",
+    "build:userstyles": "node 'source/index.js'",
+    "test": "xo && stylelint 'source/css/*.css'",
     "deploy": "rm -rf 'public/' && yarn build && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
   },
@@ -22,8 +23,10 @@
     "husky": "^4.2.5",
     "netlify-cli": "^2.58.0",
     "nodemon": "^2.0.4",
+    "nunjucks": "^3.2.2",
     "stylelint": "^13.6.1",
-    "stylelint-config-xo-space": "^0.14.0"
+    "stylelint-config-xo-space": "^0.14.0",
+    "xo": "^0.32.1"
   },
   "stylelint": {
     "extends": [
@@ -32,6 +35,16 @@
     "rules": {
       "no-descending-specificity": null
     }
+  },
+  "xo": {
+    "ignores": [
+      "submodules/**/*.js"
+    ],
+    "prettier": true,
+    "rules": {
+      "no-await-in-loop": "off"
+    },
+    "space": true
   },
   "husky": {
     "hooks": {

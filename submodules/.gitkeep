@@ -1,0 +1,12 @@
+# This `submodules` directory exists to hold external projects, but without using
+# Git's submodule functionality (because they're kind of a pain in the ass to use).
+
+# To initialize the submodules needed to build the website, run the following
+# commands in this directory.
+
+git clone git@git.holllo.cc/Bauke/userstyles.git
+cd userstyles
+yarn --silent
+
+# Then, if they ever need to be updated, just pull the changes and run Yarn
+# again, if necessary.

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Userstyles</title>
+  <link rel="stylesheet" href="../css/modern-normalize.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/userstyles.css">
+</head>
+
+<body>
+  <main>
+    <h1>Userstyles</h1>
+
+    <ul class="remove-a-padding">
+      <li>A collection of all my userstyles for various websites.</li>
+
+      <li>
+        Don't know how to install userstyles? Install the
+        <a href="https://add0n.com/stylus.html" target="_blank">Stylus web extension</a>
+        and then click on the "Install" button. This will open a new tab where Stylus
+        will ask you to install the userstyle in question.
+      </li>
+
+      <li>
+        Encounter an issue with any of the styles?
+        <a href="mailto:me@bauke.xyz">Email (me@bauke.xyz)</a>
+        or message me on Matrix (@baukexyz:matrix.org) and I'll try to fix
+        your problem as soon as possible.
+      </li>
+
+      <li>
+        Open-sourced with the MIT license, available at
+        <a href="git.holllo.cc/Bauke/userstyles" target="_blank">git.holllo.cc/Bauke/userstyles</a>.
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    {% for style in styles %}
+    <header>
+      <h2 id="{{ style.name | lower | replace(" ", "-") }}">
+        {{ style.name }}
+      </h2>
+      <a class="install" href="{{ style.updateURL }}" target="_blank">Install</a>
+    </header>
+
+    <ul>
+      <li>{{ style.description }}</li>
+      <li>Version {{ style.version }}</li>
+      <li>Licensed under {{ style.license }}.</li>
+      <li>
+        Applies to
+        <a class="remove-padding" href="https://{{ style.domain }}">{{ style.domain }}</a>.
+      </li>
+    </ul>
+
+    {% if not loop.last %}
+    <div class="divider"></div>
+    {% endif %}
+    {% endfor %}
+  </main>
+
+  <footer>
+    <p>
+      &copy; Bauke
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+    </p>
+  </footer>
+</body>
+
+</html>
