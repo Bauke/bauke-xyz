@@ -52,7 +52,7 @@ async function main() {
   );
 }
 
-// Run `main()` if this script was called directly (like `node source/index.js`).
+// Run `main()` if this script was called directly (like `node source/userstyles.js`).
 if (require.main === module) {
   main();
 }

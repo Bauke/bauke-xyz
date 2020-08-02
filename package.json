@@ -8,9 +8,11 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html css'",
-    "build": "cpy '**' '!index.js' '!userstyles/*' '../public/' --cwd='source' --parents && yarn build:css && yarn build:userstyles",
+    "build": "yarn build:cpy && yarn build:css && yarn build:userscripts && yarn build:userstyles",
+    "build:cpy": "cpy '**' '!index.js' '!userstyles/*' '!userscripts/*' '../public/' --cwd='source' --parents",
     "build:css": "cpy 'node_modules/modern-normalize/modern-normalize.css' 'public/css/'",
-    "build:userstyles": "node 'source/index.js'",
+    "build:userscripts": "node 'source/userscripts.js'",
+    "build:userstyles": "node 'source/userstyles.js'",
     "test": "xo && stylelint 'source/css/*.css'",
     "deploy": "rm -rf 'public/' && yarn build && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"

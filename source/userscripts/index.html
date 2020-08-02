@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Userscripts</title>
+  <link rel="stylesheet" href="../css/modern-normalize.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/userscripts.css">
+</head>
+
+<body>
+  <main>
+    <h1>Userscripts</h1>
+
+    <ul class="remove-a-padding">
+      <li>A collection of all my userscripts for various websites.</li>
+
+      <li>
+        Don't know how to install userscripts? Install
+        <a href="https://greasyfork.org" target="_blank">a userscript manager</a>
+        and then click on the "Install" button. This should open a new window
+        or tab where your userscript manager will ask you to install the userscript
+        in question.
+      </li>
+
+      <li>
+        Encounter an issue with any of the scripts?
+        <a href="mailto:me@bauke.xyz">Email (me@bauke.xyz)</a>
+        or message me on Matrix (@baukexyz:matrix.org) and I'll try to fix
+        the problem as soon as possible.
+      </li>
+
+      <li>
+        Open-sourced with the MIT license, available at
+        <a href="https://git.holllo.cc/Bauke/userscripts" target="_blank">git.holllo.cc/Bauke/userscripts</a>.
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    {% for script in scripts %}
+    <header>
+      <h2 id="{{ script.name | lower | replace(" ", "-") }}">
+        {{ script.name }}
+      </h2>
+      <a class="install" href="{{ script.downloadURL }}" target="_blank">Install</a>
+    </header>
+
+    <ul>
+      <li>{{ script.description }}</li>
+      <li>Version {{ script.version }}</li>
+      <li>
+        Applies to
+        <a class="remove-padding" href="https://{{ script.domain }}" target="_blank">{{ script.domain }}</a>.
+      </li>
+    </ul>
+
+    {% if not loop.last %}
+    <div class="divider"></div>
+    {% endif %}
+    {% endfor %}
+  </main>
+
+  <footer>
+    <p>
+      &copy; Bauke
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+    </p>
+  </footer>
+</body>
+
+</html>
