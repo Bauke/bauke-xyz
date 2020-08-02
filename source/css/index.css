@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  --accent-1: #3bd18a;
   background-color: #1f1731;
   color: #f2efff;
   font-size: 1.75rem;
@@ -61,7 +62,7 @@ main,
 footer,
 h1,
 ul {
-  border: 1px solid #3bd18a;
+  border: 1px solid var(--accent-1);
 }
 
 ul {
@@ -83,7 +84,7 @@ li:last-child {
 }
 
 .divider {
-  border-top: 1px solid #3bd18a;
+  border-top: 1px solid var(--accent-1);
   width: 100%;
 }
 

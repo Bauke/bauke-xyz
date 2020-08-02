@@ -1,7 +1,11 @@
+body {
+  --accent-1: #96c839;
+}
+
 header {
   align-items: center;
   background-color: #2a2041;
-  border: 1px solid #3bd18a;
+  border: 1px solid var(--accent-1);
   display: flex;
   justify-content: center;
   padding: 16px;
@@ -14,12 +18,12 @@ h2 {
 }
 
 a.install {
-  background-color: #3bd18a;
+  background-color: var(--accent-1);
   color: #1f1731;
 }
 
 a.install:hover {
-  background-color: #96c839;
+  background-color: #d2b83a;
 }
 
 .remove-padding,
