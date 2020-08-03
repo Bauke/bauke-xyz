@@ -105,6 +105,3 @@ dist
 
 # Build directory.
 public/
-
-submodules/*
-!submodules/update.sh

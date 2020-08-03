@@ -2,10 +2,7 @@ const {promises: fsp} = require('fs');
 const nunjucks = require('nunjucks');
 const {join} = require('path');
 
-const {build} = require('../submodules/userstyles/source');
-const {
-  readStyleMetadata
-} = require('../submodules/userstyles/source/utilities');
+const {build, readStyleMetadata} = require('userstyles');
 
 async function main() {
   // Make sure the `public/userstyles` directory exists.
@@ -22,7 +19,7 @@ async function main() {
   await build();
 
   // Define the build directory where the userstyles will be built to.
-  const buildDir = join(__dirname, '../submodules/userstyles/build/');
+  const buildDir = join(__dirname, '../node_modules/userstyles/build/');
 
   // Read and sort the files in the build directory.
   const styles = await fsp.readdir(buildDir);

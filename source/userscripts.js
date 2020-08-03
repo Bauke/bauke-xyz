@@ -2,10 +2,7 @@ const {promises: fsp} = require('fs');
 const nunjucks = require('nunjucks');
 const {join} = require('path');
 
-const {
-  readScriptMetadata,
-  scripts
-} = require('../submodules/userscripts/source');
+const {readScriptMetadata, scripts} = require('userscripts');
 
 async function main() {
   // Make sure the `public/userscripts` directory exists.
@@ -22,7 +19,7 @@ async function main() {
   const scriptMetadatas = [];
 
   // Define the source directory where the userscripts are located.
-  const sourceDir = join(__dirname, '../submodules/userscripts/source/');
+  const sourceDir = join(__dirname, '../node_modules/userscripts/source/');
 
   for (const script of scripts) {
     // Read the script metadata and add it to our array.

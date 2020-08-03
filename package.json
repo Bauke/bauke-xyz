@@ -1,7 +1,7 @@
 {
   "name": "bauke.xyz",
   "description": "My personal website.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Bauke <me@bauke.xyz>",
   "homepage": "https://bauke.xyz",
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
@@ -18,7 +18,9 @@
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
   },
   "dependencies": {
-    "modern-normalize": "^0.7.0"
+    "modern-normalize": "^0.7.0",
+    "userscripts": "git+https://git.holllo.cc/Bauke/userscripts.git",
+    "userstyles": "git+https://git.holllo.cc/Bauke/userstyles.git"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.1",
@@ -39,9 +41,6 @@
     }
   },
   "xo": {
-    "ignores": [
-      "submodules/**/*.js"
-    ],
     "prettier": true,
     "rules": {
       "no-await-in-loop": "off"
