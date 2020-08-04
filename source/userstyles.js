@@ -49,6 +49,10 @@ async function main() {
   );
 }
 
+module.exports = {
+  build: main
+};
+
 // Run `main()` if this script was called directly (like `node source/userstyles.js`).
 if (require.main === module) {
   main();

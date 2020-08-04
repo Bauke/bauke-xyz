@@ -1,18 +1,14 @@
 {
   "name": "bauke.xyz",
   "description": "My personal website.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "Bauke <me@bauke.xyz>",
   "homepage": "https://bauke.xyz",
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
   "license": "MIT",
   "scripts": {
     "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html css'",
-    "build": "yarn build:cpy && yarn build:css && yarn build:userscripts && yarn build:userstyles",
-    "build:cpy": "cpy '**' '!index.js' '!userstyles/*' '!userscripts/*' '../public/' --cwd='source' --parents",
-    "build:css": "cpy 'node_modules/modern-normalize/modern-normalize.css' 'public/css/'",
-    "build:userscripts": "node 'source/userscripts.js'",
-    "build:userstyles": "node 'source/userstyles.js'",
+    "build": "node 'source/index.js'",
     "test": "xo && stylelint 'source/css/*.css'",
     "deploy": "rm -rf 'public/' && yarn build && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
@@ -23,6 +19,7 @@
     "userstyles": "git+https://git.holllo.cc/Bauke/userstyles.git"
   },
   "devDependencies": {
+    "cpy": "^8.1.0",
     "cpy-cli": "^3.1.1",
     "husky": "^4.2.5",
     "netlify-cli": "^2.58.0",
