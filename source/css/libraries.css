@@ -5,7 +5,7 @@
 }
 
 .libraries li {
-  background-color: #2a2041;
+  background-color: var(--background-2);
   padding: 16px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .libraries a:hover {
-  background-color: #3bd18a;
+  background-color: var(--primary-accent-2);
 }
 
 .libraries .badges {
@@ -24,20 +24,20 @@
 
 #npm,
 .libraries li.npm {
-  border: 1px solid #f99fb1;
+  border: 1px solid var(--primary-accent-1);
 }
 
 .npm a {
-  background-color: #f99fb1;
-  color: #1f1731;
+  background-color: var(--primary-accent-1);
+  color: var(--background-1);
 }
 
 #crates,
 .libraries li.crates {
-  border: 1px solid #96c839;
+  border: 1px solid var(--primary-accent-4);
 }
 
 .crates a {
-  background-color: #96c839;
-  color: #1f1731;
+  background-color: var(--primary-accent-4);
+  color: var(--background-1);
 }

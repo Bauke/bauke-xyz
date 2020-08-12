@@ -1,11 +1,7 @@
-body {
-  --accent-1: #f99fb1;
-}
-
 header {
   align-items: center;
-  background-color: #2a2041;
-  border: 1px solid var(--accent-1);
+  background-color: var(--background-2);
+  border: 1px solid var(--primary-accent-1);
   display: flex;
   justify-content: center;
   padding: 16px;
@@ -18,8 +14,8 @@ h2 {
 }
 
 a.install {
-  background-color: var(--accent-1);
-  color: #1f1731;
+  background-color: var(--primary-accent-1);
+  color: var(--background-1);
 }
 
 a.install:hover {

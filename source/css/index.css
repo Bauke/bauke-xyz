@@ -3,9 +3,8 @@ html {
 }
 
 body {
-  --accent-1: #3bd18a;
-  background-color: #1f1731;
-  color: #f2efff;
+  background-color: var(--background-1);
+  color: var(--foreground-1);
   font-size: 1.75rem;
   padding: 16px;
 }
@@ -23,7 +22,7 @@ main {
 
 h1,
 h2 {
-  background-color: #2a2041;
+  background-color: var(--background-2);
   padding: 16px;
   width: 100%;
 }
@@ -36,7 +35,7 @@ p {
 
 a {
   border: 1px dashed transparent;
-  color: #41c8e5;
+  color: var(--primary-accent-7);
   display: inline-block;
   font-weight: bold;
   padding: 4px 8px;
@@ -44,13 +43,13 @@ a {
 }
 
 a:hover {
-  background-color: #d2b83a;
-  color: #1f1731;
+  background-color: var(--primary-accent-3);
+  color: var(--background-1);
 }
 
 a:active,
 a:focus {
-  border: 1px dashed #f2efff;
+  border: 1px dashed var(--foreground-1);
   outline: none;
 }
 
@@ -62,12 +61,12 @@ main,
 footer,
 h1,
 ul {
-  border: 1px solid var(--accent-1);
+  border: 1px solid var(--primary-accent-5);
 }
 
 ul {
   align-items: center;
-  background-color: #2a2041;
+  background-color: var(--background-2);
   list-style: none;
   margin: 0;
   overflow: auto;
@@ -84,7 +83,7 @@ li:last-child {
 }
 
 .divider {
-  border-top: 1px solid var(--accent-1);
+  border-top: 1px solid var(--primary-accent-5);
   width: 100%;
 }
 
