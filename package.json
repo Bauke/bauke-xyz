@@ -7,9 +7,9 @@
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html css'",
-    "build": "node 'source/index.js'",
-    "test": "xo && stylelint 'source/css/*.css'",
+    "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html scss'",
+    "build": "node 'source/index.js' && sass 'source/scss/':'public/css/'",
+    "test": "xo && stylelint 'source/scss/*.scss'",
     "deploy": "rm -rf 'public/' && yarn build && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
   },
@@ -24,12 +24,15 @@
     "netlify-cli": "^2.58.0",
     "nodemon": "^2.0.4",
     "nunjucks": "^3.2.2",
+    "sass": "^1.26.10",
     "stylelint": "^13.6.1",
+    "stylelint-config-xo-scss": "^0.13.0",
     "stylelint-config-xo-space": "^0.14.0",
     "xo": "^0.32.1"
   },
   "stylelint": {
     "extends": [
+      "stylelint-config-xo-scss",
       "stylelint-config-xo-space"
     ],
     "rules": {

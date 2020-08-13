@@ -6,71 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Libraries</title>
   <link rel="stylesheet" href="../css/modern-normalize.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/libraries.css">
 </head>
 
 <body>
-  <main>
-    <h1>Libraries</h1>
+  <main class="bordered">
+    <h1 class="bordered">Libraries</h1>
 
-    <h2 id="crates">Crates.io</h2>
-    <ul class="libraries">
-      <li class="crates" id="opml">
-        <a href="https://crates.io/crates/opml" target="_blank">opml</a>
-        <p class="badges">
-          <img src="https://img.shields.io/crates/v/opml?color=yellowgreen&amp;style=flat-square"
-            alt="Crates.io version">
-          <img src="https://img.shields.io/crates/dr/opml?color=yellowgreen&amp;style=flat-square"
-            alt="Crates.io recent downloads">
-          <img src="https://img.shields.io/crates/l/opml?color=yellowgreen&amp;style=flat-square"
-            alt="Crates.io license">
-        </p>
-      </li>
-    </ul>
+    <div id="crates">
+      <h2 class="bordered">Crates.io</h2>
+      <ul class="bordered libraries">
+        <li class="bordered crates" id="opml">
+          <a class="button" href="https://crates.io/crates/opml" target="_blank">opml</a>
+          <p class="badges">
+            <img src="https://img.shields.io/crates/v/opml?color=yellowgreen&amp;style=flat-square"
+              alt="Crates.io version">
+            <img src="https://img.shields.io/crates/dr/opml?color=yellowgreen&amp;style=flat-square"
+              alt="Crates.io recent downloads">
+            <img src="https://img.shields.io/crates/l/opml?color=yellowgreen&amp;style=flat-square"
+              alt="Crates.io license">
+          </p>
+        </li>
+      </ul>
+    </div>
 
     <div class="divider"></div>
 
-    <h2 id="npm">npm</h2>
-    <ul class="libraries">
-      <li class="npm" id="fancify">
-        <a href="https://npmjs.com/package/fancify" target="_blank">fancify</a>
-        <p class="badges">
-          <img src="https://img.shields.io/npm/v/fancify?color=red&amp;style=flat-square"
-            alt="npm version">
-          <img src="https://img.shields.io/npm/dm/fancify?color=red&amp;style=flat-square"
-            alt="npm downloads per month">
-          <img src="https://img.shields.io/npm/l/fancify?color=red&amp;style=flat-square"
-            alt="npm license">
-        </p>
-      </li>
-      <li class="npm" id="node-ddg">
-        <a href="https://npmjs.com/package/node-ddg" target="_blank">node-ddg</a>
-        <p class="badges">
-          <img src="https://img.shields.io/npm/v/node-ddg?color=red&amp;style=flat-square"
-            alt="npm version">
-          <img src="https://img.shields.io/npm/dm/node-ddg?color=red&amp;style=flat-square"
-            alt="npm downloads per month">
-          <img src="https://img.shields.io/npm/l/node-ddg?color=red&amp;style=flat-square"
-            alt="npm license">
-        </p>
-      </li>
-      <li class="npm" id="owofy">
-        <a href="https://npmjs.com/package/owofy" target="_blank">owofy</a>
-        <p class="badges">
-          <img src="https://img.shields.io/npm/v/owofy?color=red&amp;style=flat-square"
-            alt="npm version">
-          <img src="https://img.shields.io/npm/dm/owofy?color=red&amp;style=flat-square"
-            alt="npm downloads per month">
-          <img src="https://img.shields.io/npm/l/owofy?color=red&amp;style=flat-square"
-            alt="npm license">
-        </p>
-      </li>
-    </ul>
+    <div id="npm">
+      <h2 class="bordered">npm</h2>
+      <ul class="bordered libraries">
+        <li class="bordered npm" id="fancify">
+          <a class="button" href="https://npmjs.com/package/fancify" target="_blank">fancify</a>
+          <p class="badges">
+            <img src="https://img.shields.io/npm/v/fancify?color=red&amp;style=flat-square"
+              alt="npm version">
+            <img src="https://img.shields.io/npm/dm/fancify?color=red&amp;style=flat-square"
+              alt="npm downloads per month">
+            <img src="https://img.shields.io/npm/l/fancify?color=red&amp;style=flat-square"
+              alt="npm license">
+          </p>
+        </li>
+        <li class="bordered npm" id="node-ddg">
+          <a class="button" href="https://npmjs.com/package/node-ddg" target="_blank">node-ddg</a>
+          <p class="badges">
+            <img src="https://img.shields.io/npm/v/node-ddg?color=red&amp;style=flat-square"
+              alt="npm version">
+            <img src="https://img.shields.io/npm/dm/node-ddg?color=red&amp;style=flat-square"
+              alt="npm downloads per month">
+            <img src="https://img.shields.io/npm/l/node-ddg?color=red&amp;style=flat-square"
+              alt="npm license">
+          </p>
+        </li>
+        <li class="bordered npm" id="owofy">
+          <a class="button" href="https://npmjs.com/package/owofy" target="_blank">owofy</a>
+          <p class="badges">
+            <img src="https://img.shields.io/npm/v/owofy?color=red&amp;style=flat-square"
+              alt="npm version">
+            <img src="https://img.shields.io/npm/dm/owofy?color=red&amp;style=flat-square"
+              alt="npm downloads per month">
+            <img src="https://img.shields.io/npm/l/owofy?color=red&amp;style=flat-square"
+              alt="npm license">
+          </p>
+        </li>
+      </ul>
+    </div>
   </main>
 
-  <footer>
+  <footer class="bordered">
     <p>
       &copy; Bauke
       <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>

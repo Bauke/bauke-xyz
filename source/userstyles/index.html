@@ -6,16 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Userstyles</title>
   <link rel="stylesheet" href="../css/modern-normalize.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/userstyles.css">
 </head>
 
 <body>
-  <main>
-    <h1>Userstyles</h1>
+  <main class="bordered">
+    <h1 class="bordered">Userstyles</h1>
 
-    <ul class="remove-a-padding">
+    <ul class="bordered remove-a-padding">
       <li>A collection of all my userstyles for various websites.</li>
 
       <li>
@@ -41,14 +40,14 @@
     <div class="divider"></div>
 
     {% for style in styles %}
-    <header>
+    <header class="bordered">
       <h2 id="{{ style.name | lower | replace(" ", "-") }}">
         {{ style.name }}
       </h2>
-      <a class="install" href="{{ style.updateURL }}" target="_blank">Install</a>
+      <a class="button" href="{{ style.updateURL }}" target="_blank">Install</a>
     </header>
 
-    <ul>
+    <ul class="bordered">
       <li>{{ style.description }}</li>
       <li>Version {{ style.version }}</li>
       <li>Licensed under {{ style.license }}.</li>
@@ -64,7 +63,7 @@
     {% endfor %}
   </main>
 
-  <footer>
+  <footer class="bordered">
     <p>
       &copy; Bauke
       <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>

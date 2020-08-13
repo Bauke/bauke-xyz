@@ -12,7 +12,8 @@ async function main() {
       '!userscripts.js',
       '!userstyles.js',
       '!userscripts/*',
-      '!userstyles/*'
+      '!userstyles/*',
+      '!scss/*'
     ],
     '../public/',
     {

@@ -1,3 +1,5 @@
+@import 'variables';
+
 html {
   font-size: 62.5%;
 }
@@ -10,7 +12,6 @@ body {
 }
 
 main {
-  align-items: center;
   display: flex;
   gap: 16px;
   flex-direction: column;
@@ -35,33 +36,26 @@ p {
 
 a {
   border: 1px dashed transparent;
-  color: var(--primary-accent-7);
+  color: var(--page-accent-1, --primary-accent-7);
   display: inline-block;
   font-weight: bold;
   padding: 4px 8px;
   text-decoration: none;
-}
 
-a:hover {
-  background-color: var(--primary-accent-3);
-  color: var(--background-1);
-}
+  &:hover {
+    background-color: var(--page-accent-2, var(--primary-accent-3));
+    color: var(--background-1);
+  }
 
-a:active,
-a:focus {
-  border: 1px dashed var(--foreground-1);
-  outline: none;
+  &:active,
+  &:focus {
+    border: 1px dashed var(--foreground-1);
+    outline: none;
+  }
 }
 
 img {
   display: inline-block;
-}
-
-main,
-footer,
-h1,
-ul {
-  border: 1px solid var(--primary-accent-5);
 }
 
 ul {
@@ -76,15 +70,10 @@ ul {
 
 li {
   margin-bottom: 8px;
-}
 
-li:last-child {
-  margin-bottom: 0;
-}
-
-.divider {
-  border-top: 1px solid var(--primary-accent-5);
-  width: 100%;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 footer {
@@ -92,8 +81,31 @@ footer {
   margin: 0 auto;
   max-width: 500px;
   padding: 16px;
+
+  a {
+    padding: 0;
+  }
 }
 
-footer a {
+.bordered {
+  border: var(--border-size, 1px) solid var(--border-accent, var(--primary-accent-5));
+}
+
+.button {
+  background-color: var(--page-accent-1);
+  color: var(--background-1);
+
+  &:hover {
+    background-color: var(--page-accent-2);
+  }
+}
+
+.divider {
+  border-top: var(--border-size, 1px) solid var(--border-accent, var(--primary-accent-5));
+  width: 100%;
+}
+
+.remove-padding,
+.remove-a-padding a {
   padding: 0;
 }
