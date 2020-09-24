@@ -1,7 +1,7 @@
 {
   "name": "bauke.xyz",
   "description": "My personal website.",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "author": "Bauke <me@bauke.xyz>",
   "homepage": "https://bauke.xyz",
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
@@ -14,21 +14,21 @@
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
   },
   "dependencies": {
-    "modern-normalize": "^0.7.0",
+    "modern-normalize": "^1.0.0",
     "userscripts": "git+https://git.holllo.cc/Bauke/userscripts.git",
     "userstyles": "git+https://git.holllo.cc/Bauke/userstyles.git"
   },
   "devDependencies": {
-    "cpy": "^8.1.0",
-    "husky": "^4.2.5",
-    "netlify-cli": "^2.58.0",
+    "cpy": "^8.1.1",
+    "husky": "^4.3.0",
+    "netlify-cli": "^2.64.1",
     "nodemon": "^2.0.4",
     "nunjucks": "^3.2.2",
-    "sass": "^1.26.10",
-    "stylelint": "^13.6.1",
+    "sass": "^1.26.11",
+    "stylelint": "^13.7.1",
     "stylelint-config-xo-scss": "^0.13.0",
     "stylelint-config-xo-space": "^0.14.0",
-    "xo": "^0.32.1"
+    "xo": "^0.33.1"
   },
   "stylelint": {
     "extends": [
@@ -36,6 +36,8 @@
       "stylelint-config-xo-space"
     ],
     "rules": {
+      "at-rule-empty-line-before": null,
+      "at-rule-no-unknown": null,
       "no-descending-specificity": null
     }
   },

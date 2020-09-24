@@ -1,33 +1,14 @@
-body {
-  --foreground-1: #f2efff;
-  --foreground-2: #e6deff;
-  --background-1: #1f1731;
-  --background-2: #2a2041;
-  --primary-accent-1: #f99fb1;
-  --primary-accent-2: #faa56c;
-  --primary-accent-3: #d2b83a;
-  --primary-accent-4: #96c839;
-  --primary-accent-5: #3bd18a;
-  --primary-accent-6: #3ecdbf;
-  --primary-accent-7: #41c8e5;
-  --primary-accent-8: #98b9f8;
-  --primary-accent-9: #d5a6f8;
-  --primary-accent-10: #f99add;
-  --primary-gray-1: #e2e2e2;
-  --primary-gray-2: #c6c6c6;
-  --primary-gray-3: #ababab;
-  --secondary-accent-1: #8b123c;
-  --secondary-accent-2: #6a3b11;
-  --secondary-accent-3: #514610;
-  --secondary-accent-4: #384d10;
-  --secondary-accent-5: #115133;
-  --secondary-accent-6: #124f49;
-  --secondary-accent-7: #144d5a;
-  --secondary-accent-8: #17477e;
-  --secondary-accent-9: #6f1995;
-  --secondary-accent-10: #81156a;
-  --secondary-gray-1: #1b1b1b;
-  --secondary-gray-2: #303030;
-  --secondary-gray-3: #474747;
-  --transparent-accent-1: #000a;
+$small-breakpoint: 600px;
+$medium-breakpoint: 900px;
+$large-breakpoint: 1200px;
+$extra-large-breakpoint: 1800px;
+
+@mixin responsive-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: $small-breakpoint;
+
+  @media (max-width: $small-breakpoint) {
+    width: 100%;
+  }
 }

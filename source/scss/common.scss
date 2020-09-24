@@ -1,29 +1,29 @@
 @import 'variables';
+@import 'love';
 
 html {
   font-size: 62.5%;
 }
 
 body {
-  background-color: var(--background-1);
-  color: var(--foreground-1);
+  background-color: var(--db-1);
+  color: var(--df-1);
   font-size: 1.75rem;
   padding: 16px;
 }
 
 main {
+  @include responsive-container;
   display: flex;
   gap: 16px;
   flex-direction: column;
-  margin: 0 auto;
   margin-bottom: 16px;
-  max-width: 500px;
   padding: 16px;
 }
 
 h1,
 h2 {
-  background-color: var(--background-2);
+  background-color: var(--db-2);
   padding: 16px;
   width: 100%;
 }
@@ -36,20 +36,20 @@ p {
 
 a {
   border: 1px dashed transparent;
-  color: var(--page-accent-1, --primary-accent-7);
+  color: var(--page-accent-1, var(--da-7));
   display: inline-block;
   font-weight: bold;
   padding: 4px 8px;
   text-decoration: none;
 
   &:hover {
-    background-color: var(--page-accent-2, var(--primary-accent-3));
-    color: var(--background-1);
+    background-color: var(--page-accent-2, var(--da-3));
+    color: var(--db-1);
   }
 
   &:active,
   &:focus {
-    border: 1px dashed var(--foreground-1);
+    border: 1px dashed var(--df-1);
     outline: none;
   }
 }
@@ -60,7 +60,7 @@ img {
 
 ul {
   align-items: center;
-  background-color: var(--background-2);
+  background-color: var(--db-2);
   list-style: none;
   margin: 0;
   overflow: auto;
@@ -77,9 +77,8 @@ li {
 }
 
 footer {
+  @include responsive-container;
   font-weight: bold;
-  margin: 0 auto;
-  max-width: 500px;
   padding: 16px;
 
   a {
@@ -88,12 +87,12 @@ footer {
 }
 
 .bordered {
-  border: var(--border-size, 1px) solid var(--border-accent, var(--primary-accent-5));
+  border: var(--border-size, 1px) solid var(--border-accent, var(--da-5));
 }
 
 .button {
   background-color: var(--page-accent-1);
-  color: var(--background-1);
+  color: var(--db-1);
 
   &:hover {
     background-color: var(--page-accent-2);
@@ -101,7 +100,7 @@ footer {
 }
 
 .divider {
-  border-top: var(--border-size, 1px) solid var(--border-accent, var(--primary-accent-5));
+  border-top: var(--border-size, 1px) solid var(--border-accent, var(--da-5));
   width: 100%;
 }
 

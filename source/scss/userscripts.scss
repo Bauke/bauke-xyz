@@ -1,12 +1,12 @@
 body {
-  --border-accent: var(--primary-accent-10);
-  --page-accent-1: var(--primary-accent-7);
-  --page-accent-2: var(--primary-accent-3);
+  --border-accent: var(--da-10);
+  --page-accent-1: var(--da-7);
+  --page-accent-2: var(--da-3);
 }
 
 header {
   align-items: center;
-  background-color: var(--background-2);
+  background-color: var(--db-2);
   display: flex;
   justify-content: center;
   padding: 16px;

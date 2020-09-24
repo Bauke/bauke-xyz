@@ -1,7 +1,7 @@
 body {
-  --border-accent: var(--primary-accent-5);
-  --page-accent-1: var(--primary-accent-7);
-  --page-accent-2: var(--primary-accent-3);
+  --border-accent: var(--da-5);
+  --page-accent-1: var(--da-7);
+  --page-accent-2: var(--da-3);
 }
 
 .libraries {
@@ -11,7 +11,7 @@ body {
 }
 
 .libraries li {
-  background-color: var(--background-2);
+  background-color: var(--db-2);
   padding: 16px;
 }
 
@@ -32,13 +32,13 @@ body {
 }
 
 #crates {
-  --border-accent: var(--primary-accent-4);
-  --page-accent-1: var(--primary-accent-4);
-  --page-accent-2: var(--primary-accent-7);
+  --border-accent: var(--da-4);
+  --page-accent-1: var(--da-4);
+  --page-accent-2: var(--da-7);
 }
 
 #npm {
-  --border-accent: var(--primary-accent-1);
-  --page-accent-1: var(--primary-accent-1);
-  --page-accent-2: var(--primary-accent-7);
+  --border-accent: var(--da-1);
+  --page-accent-1: var(--da-1);
+  --page-accent-2: var(--da-7);
 }
