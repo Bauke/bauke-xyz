@@ -5,7 +5,7 @@
   "author": "Bauke <me@bauke.xyz>",
   "homepage": "https://bauke.xyz",
   "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html scss'",
     "build": "node 'source/index.js' && sass 'source/scss/':'public/css/'",
