@@ -1,0 +1,9 @@
+[build]
+dist = "public"
+
+[serve]
+no_autoreload = false
+port = 5500
+
+[clean]
+dist = "public"

@@ -1,57 +1,32 @@
 {
   "name": "bauke.xyz",
-  "description": "My personal website.",
-  "version": "0.2.0",
-  "author": "Bauke <me@bauke.xyz>",
-  "homepage": "https://bauke.xyz",
-  "repository": "https://git.holllo.cc/Bauke/bauke.xyz",
+  "version": "0.0.0",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "nodemon --watch 'source/' --exec 'yarn build' --ext 'html scss'",
-    "build": "node 'source/index.js' && sass 'source/scss/':'public/css/'",
-    "test": "xo && stylelint 'source/scss/*.scss'",
-    "deploy": "rm -rf 'public/' && yarn build && yarn deploy:netlify",
-    "deploy:netlify": "netlify deploy --prod --dir 'public/' -s 37bb1f7c-2abb-419f-9a31-a4b72209c1c8"
-  },
-  "dependencies": {
-    "modern-normalize": "^1.0.0",
-    "userscripts": "git+https://git.holllo.cc/Bauke/userscripts.git",
-    "userstyles": "git+https://git.holllo.cc/Bauke/userstyles.git"
+    "deploy": "trunk clean && trunk build --release && yarn deploy:netlify",
+    "deploy:netlify": "netlify deploy --prod --dir 'public/' -s bauke.xyz",
+    "test": "stylelint 'source/**/*.scss'"
   },
   "devDependencies": {
-    "cpy": "^8.1.1",
-    "husky": "^4.3.0",
-    "netlify-cli": "^2.64.1",
-    "nodemon": "^2.0.4",
-    "nunjucks": "^3.2.2",
-    "sass": "^1.26.11",
-    "stylelint": "^13.7.2",
-    "stylelint-config-xo-scss": "^0.13.0",
-    "stylelint-config-xo-space": "^0.14.0",
-    "xo": "^0.33.1"
+    "netlify-cli": "^6.7.6",
+    "stylelint": "^13.13.1",
+    "stylelint-config-xo-scss": "^0.14.0",
+    "stylelint-config-xo-space": "^0.15.1"
   },
   "stylelint": {
     "extends": [
       "stylelint-config-xo-scss",
       "stylelint-config-xo-space"
     ],
+    "ignoreFiles": [
+      "**/*.css"
+    ],
     "rules": {
       "at-rule-empty-line-before": null,
       "at-rule-no-unknown": null,
-      "no-descending-specificity": null
-    }
-  },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "no-await-in-loop": "off"
-    },
-    "space": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn test"
+      "no-descending-specificity": null,
+      "scss/at-import-partial-extension": null,
+      "scss/at-rule-no-unknown": null
     }
   }
 }

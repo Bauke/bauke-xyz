@@ -1,5 +1,30 @@
-body {
-  --border-accent: var(--da-5);
-  --page-accent-1: var(--da-7);
-  --page-accent-2: var(--da-3);
+@import 'reset';
+@import 'mixins';
+
+html {
+  font-size: 62.5%;
 }
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+a {
+  color: #ff0;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+@import 'components/page-footer';
+@import 'components/page-header';
+@import 'components/page-main';

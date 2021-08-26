@@ -1,0 +1,25 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package]
+name = "bauke-xyz"
+description = "https://bauke.xyz"
+version = "1.0.0"
+edition = "2018"
+repository = "https://git.holllo.cc/Bauke/bauke.xyz"
+license = "AGPL-3.0-or-later"
+
+[[bin]]
+name = "bauke-xyz"
+path = "source/main.rs"
+
+[dependencies]
+gloo-console = "0.1.0"
+gloo-timers = "0.2.1"
+log = "0.4.14"
+rand = "0.8.4"
+wasm-logger = "0.2.0"
+yew = "0.18.0"
+
+[dependencies.getrandom]
+version = "0.2.3"
+features = ["js"]
