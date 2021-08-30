@@ -1,0 +1,2 @@
+# Redirect any non-existing files to /
+/* / 200
