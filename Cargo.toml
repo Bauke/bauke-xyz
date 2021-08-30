@@ -19,6 +19,7 @@ log = "0.4.14"
 rand = "0.8.4"
 wasm-logger = "0.2.0"
 yew = "0.18.0"
+yew-router = "0.15.0"
 
 [dependencies.getrandom]
 version = "0.2.3"

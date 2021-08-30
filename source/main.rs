@@ -4,11 +4,21 @@
 //! # [bauke.xyz](https://bauke.xyz)
 
 use yew::prelude::*;
+use yew_router::router::Router;
 
 /// Components collection.
 pub(crate) mod components;
+/// Routes collection.
+pub(crate) mod routes;
 
-use components::{PageFooter, PageHeader, PageMain};
+/// All routes.
+#[derive(Clone, yew_router::Switch)]
+pub(crate) enum Route {
+  #[to = "/{}"]
+  NotFound(String),
+  #[to = "/"]
+  Home,
+}
 
 /// The main component.
 pub(crate) struct Model;
@@ -31,11 +41,20 @@ impl Component for Model {
 
   fn view(&self) -> Html {
     html! {
-      <>
-        <PageHeader />
-        <PageMain />
-        <PageFooter />
-      </>
+      <Router<Route, ()>
+        render = Router::render(|route: Route| {
+          match route {
+            Route::NotFound(_) => html! {
+              <main class="error-404">
+                <p>{"🤷"}</p>
+              </main>
+            },
+            Route::Home => html! {
+              <routes::HomeRoute />
+            }
+          }
+        })
+      />
     }
   }
 }
