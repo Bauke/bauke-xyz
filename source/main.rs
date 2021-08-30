@@ -14,6 +14,8 @@ pub(crate) mod routes;
 /// All routes.
 #[derive(Clone, yew_router::Switch)]
 pub(crate) enum Route {
+  #[to = "/userstyles"]
+  Userstyles,
   #[to = "/{}"]
   NotFound(String),
   #[to = "/"]
@@ -51,6 +53,9 @@ impl Component for Model {
             },
             Route::Home => html! {
               <routes::HomeRoute />
+            },
+            Route::Userstyles => html! {
+              <routes::UserstylesRoute />
             }
           }
         })
