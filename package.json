@@ -8,8 +8,8 @@
     "test": "stylelint 'source/**/*.scss'"
   },
   "devDependencies": {
-    "netlify-cli": "^6.7.6",
-    "stylelint": "^13.13.1",
+    "netlify-cli": "^8.0.1",
+    "stylelint": "^14.1.0",
     "stylelint-config-xo-scss": "^0.14.0",
     "stylelint-config-xo-space": "^0.15.1"
   },

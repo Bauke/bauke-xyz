@@ -14,7 +14,7 @@ name = "bauke-xyz"
 path = "source/main.rs"
 
 [dependencies]
-gloo-console = "0.1.0"
+gloo-console = "0.2.0"
 gloo-timers = "0.2.1"
 log = "0.4.14"
 rand = "0.8.4"
