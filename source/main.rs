@@ -1,72 +1,106 @@
-#![forbid(unsafe_code)]
-#![warn(missing_docs, clippy::missing_docs_in_private_items)]
+use std::{fs, path::PathBuf, process::Command};
 
-//! # [bauke.xyz](https://bauke.xyz)
+use askama::Template;
 
-use yew::prelude::*;
-use yew_router::router::Router;
+mod templates;
 
-/// Components collection.
-pub(crate) mod components;
-/// Routes collection.
-pub(crate) mod routes;
+fn main() -> color_eyre::Result<()> {
+  color_eyre::install()?;
 
-/// All routes.
-#[derive(Clone, yew_router::Switch)]
-pub(crate) enum Route {
-  #[to = "/userstyles"]
-  Userstyles,
-  #[to = "/{}"]
-  NotFound(String),
-  #[to = "/"]
-  Home,
-}
+  let build_dir = PathBuf::from("target");
 
-/// The main component.
-pub(crate) struct Model;
+  for target in userstyles::ALL_USERSTYLES {
+    let style = userstyles::Userstyle::load(target)?;
+    let style_name = style.metadata.name.to_lowercase().replace(" ", "-");
 
-impl Component for Model {
-  type Message = ();
-  type Properties = ();
+    let style_dir = build_dir.join("userstyles");
+    fs::create_dir_all(&style_dir)?;
 
-  fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-    Self
-  }
+    let style_file = style_dir.join(format!("{}.user.css", style_name));
+    let formatted = style.format();
+    fs::write(style_file, formatted)?;
 
-  fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-    unimplemented!()
-  }
-
-  fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-    false
-  }
-
-  fn view(&self) -> Html {
-    html! {
-      <Router<Route, ()>
-        render = Router::render(|route: Route| {
-          match route {
-            Route::NotFound(_) => html! {
-              <main class="error-404">
-                <p>{"🤷"}</p>
-              </main>
-            },
-            Route::Home => html! {
-              <routes::HomeRoute />
-            },
-            Route::Userstyles => html! {
-              <routes::UserstylesRoute />
-            }
-          }
-        })
-      />
+    if let Some(image) = style.image {
+      let image_file = style_dir.join(format!("{}.png", style_name));
+      fs::write(image_file, image)?;
     }
   }
-}
 
-/// Our main function.
-pub(crate) fn main() {
-  wasm_logger::init(wasm_logger::Config::new(log::Level::Debug));
-  log::debug!("Initializing Yew");
-  yew::start_app::<Model>();
+  let public_dir = PathBuf::from("public");
+
+  let source_dir = PathBuf::from("source");
+
+  let styles = userstyles::ALL_USERSTYLES
+    .iter()
+    .map(|target| userstyles::Userstyle::load(target))
+    .flatten()
+    .collect::<Vec<_>>();
+
+  let templates_to_render: Vec<(Box<dyn Template>, PathBuf)> = vec![
+    (
+      Box::new(templates::Index {
+        page_title: "bauke.xyz".to_string(),
+      }),
+      public_dir.join("index.html"),
+    ),
+    (
+      Box::new(templates::Userstyles {
+        page_title: "bauke.xyz".to_string(),
+        styles,
+      }),
+      public_dir.join("userstyles/index.html"),
+    ),
+  ];
+
+  for (template, path) in templates_to_render {
+    fs::create_dir_all(&path.parent().unwrap())?;
+    let rendered = template.render()?;
+    fs::write(path, rendered)?;
+  }
+
+  let css_dir = public_dir.join("css");
+  fs::create_dir_all(&css_dir)?;
+
+  let scss_dir = source_dir.join("scss");
+
+  let scss_to_render = vec![
+    (scss_dir.join("index.scss"), css_dir.join("index.css")),
+    (
+      scss_dir.join("modern-normalize.scss"),
+      css_dir.join("modern-normalize.css"),
+    ),
+  ];
+
+  for (source, destination) in scss_to_render {
+    let rendered = rsass::compile_scss_path(
+      &source,
+      rsass::output::Format {
+        style: rsass::output::Style::Expanded,
+        precision: 5,
+      },
+    )?;
+
+    fs::write(destination, rendered)?;
+  }
+
+  let files_to_copy = vec![(
+    source_dir.join("netlify/_redirects"),
+    public_dir.join("_redirects"),
+  )];
+
+  for (source, destination) in files_to_copy {
+    fs::copy(source, destination)?;
+  }
+
+  let dirs_to_copy = vec![(build_dir.join("userstyles"), public_dir)];
+
+  for (source, destination) in dirs_to_copy {
+    Command::new("cp")
+      .arg("-r")
+      .arg(source)
+      .arg(destination)
+      .output()?;
+  }
+
+  Ok(())
 }

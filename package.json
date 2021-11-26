@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "deploy": "trunk clean && cargo build -q && trunk build --release && yarn deploy:netlify",
+    "deploy": "cargo run --release -q && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s bauke.xyz",
     "test": "stylelint 'source/**/*.scss'"
   },
