@@ -24,9 +24,16 @@ button {
   font-family: monospace;
 }
 
+.divider {
+  border-top: 2px solid #fff;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 @import 'components/errors';
 @import 'components/page-footer';
 @import 'components/page-header';
 @import 'components/page-main';
 
+@import 'components/listenbrainz';
 @import 'components/userstyles';

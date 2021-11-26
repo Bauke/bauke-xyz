@@ -5,13 +5,14 @@
   "scripts": {
     "deploy": "cargo run --release -q && yarn deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s bauke.xyz",
-    "test": "stylelint 'source/**/*.scss'"
+    "test": "xo && stylelint 'source/**/*.scss'"
   },
   "devDependencies": {
     "netlify-cli": "^8.0.1",
     "stylelint": "^14.1.0",
     "stylelint-config-xo-scss": "^0.14.0",
-    "stylelint-config-xo-space": "^0.15.1"
+    "stylelint-config-xo-space": "^0.15.1",
+    "xo": "^0.47.0"
   },
   "stylelint": {
     "extends": [
@@ -28,5 +29,16 @@
       "scss/at-import-partial-extension": null,
       "scss/at-rule-no-unknown": null
     }
+  },
+  "xo": {
+    "pretty": true,
+    "globals": [
+      "document",
+      "window"
+    ],
+    "rules": {
+      "capitalized-comments": "off"
+    },
+    "space": true
   }
 }

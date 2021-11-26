@@ -1,0 +1,18 @@
+.listenbrainz a {
+  align-items: center;
+  border: 2px solid #fff;
+  display: flex;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  &:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+  }
+
+  img {
+    height: 3rem;
+    margin-right: 1rem;
+  }
+}

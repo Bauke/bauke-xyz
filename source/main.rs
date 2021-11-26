@@ -92,7 +92,10 @@ fn main() -> color_eyre::Result<()> {
     fs::copy(source, destination)?;
   }
 
-  let dirs_to_copy = vec![(build_dir.join("userstyles"), public_dir)];
+  let dirs_to_copy = vec![
+    (source_dir.join("js"), &public_dir),
+    (build_dir.join("userstyles"), &public_dir),
+  ];
 
   for (source, destination) in dirs_to_copy {
     Command::new("cp")
