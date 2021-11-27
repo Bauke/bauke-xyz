@@ -6,6 +6,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   const data = await result.json();
+  if (data.payload.listens.length === 0) {
+    return;
+  }
+
   const listen = data.payload.listens[0];
   const listenHtml = `<div class="divider"></div><div class="listenbrainz">
   <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
