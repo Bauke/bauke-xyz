@@ -1,17 +1,34 @@
 window.addEventListener('DOMContentLoaded', async () => {
+  document.querySelector('.page-main').insertAdjacentHTML('beforeend', '<div class="divider"></div>');
+
+  const loop = async () => insertHtml(await getCurrentListen());
+  await loop();
+
+  setInterval(loop, 60 * 1000);
+});
+
+async function getCurrentListen() {
   const result = await window.fetch('https://api.listenbrainz.org/1/user/BaukeXYZ/playing-now');
   if (!result.ok) {
     console.warn(result.status);
-    return;
+    return null;
   }
 
   const data = await result.json();
   if (data.payload.listens.length === 0) {
-    return;
+    return null;
   }
 
-  const listen = data.payload.listens[0];
-  const listenHtml = `<div class="divider"></div><div class="listenbrainz">
+  return data.payload.listens[0];
+}
+
+function insertHtml(listen) {
+  const existing = document.querySelector('.listenbrainz');
+  if (existing !== null) {
+    existing.remove();
+  }
+
+  const listenHtml = `<div class="listenbrainz">
   <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
     <img src="https://listenbrainz.org/static/img/logo_big.svg">
     ${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}
@@ -19,4 +36,4 @@ window.addEventListener('DOMContentLoaded', async () => {
 </div>`;
 
   document.querySelector('.page-main').insertAdjacentHTML('beforeend', listenHtml);
-});
+}
