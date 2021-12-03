@@ -7,27 +7,21 @@
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s bauke.xyz",
     "test": "xo && stylelint 'source/**/*.scss'"
   },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
   "devDependencies": {
-    "netlify-cli": "^8.0.1",
+    "postcss": "^8.4.4",
     "stylelint": "^14.1.0",
-    "stylelint-config-xo-scss": "^0.14.0",
-    "stylelint-config-xo-space": "^0.15.1",
+    "stylelint-config-standard-scss": "^3.0.0",
     "xo": "^0.47.0"
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-xo-scss",
-      "stylelint-config-xo-space"
-    ],
-    "ignoreFiles": [
-      "**/*.css"
+      "stylelint-config-standard-scss"
     ],
     "rules": {
-      "at-rule-empty-line-before": null,
-      "at-rule-no-unknown": null,
-      "no-descending-specificity": null,
-      "scss/at-import-partial-extension": null,
-      "scss/at-rule-no-unknown": null
+      "string-quotes": "single"
     }
   },
   "xo": {

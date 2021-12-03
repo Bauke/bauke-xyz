@@ -23,6 +23,10 @@ async function getCurrentListen() {
 }
 
 function insertHtml(listen) {
+  if (listen === null) {
+    return;
+  }
+
   const existing = document.querySelector('.listenbrainz');
   if (existing !== null) {
     existing.remove();

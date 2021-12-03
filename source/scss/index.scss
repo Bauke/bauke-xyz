@@ -30,10 +30,9 @@ button {
   margin-top: 1rem;
 }
 
-@import 'components/errors';
-@import 'components/page-footer';
-@import 'components/page-header';
-@import 'components/page-main';
-
-@import 'components/listenbrainz';
-@import 'components/userstyles';
+@use 'components/errors';
+@use 'components/page-footer';
+@use 'components/page-header';
+@use 'components/page-main';
+@use 'components/listenbrainz';
+@use 'components/userstyles';
