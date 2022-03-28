@@ -15,6 +15,9 @@
     }
 
     a {
+      @include mixins.patterned-shadow(0.5rem);
+
+      background-color: var(--background-1);
       border: 2px solid var(--foreground-1);
       padding: 1rem;
     }
