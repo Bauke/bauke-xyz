@@ -1,6 +1,4 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  document.querySelector('.page-main').insertAdjacentHTML('beforeend', '<div class="divider"></div>');
-
   const loop = async () => {
     const listen = await getCurrentListen();
     const image = await getCoverArt(listen);
@@ -58,6 +56,7 @@ function insertHtml(listen, image) {
 
   const existing = document.querySelector('.listenbrainz') ?? undefined;
   if (existing !== undefined) {
+    existing.previousElementSibling.remove();
     existing.remove();
   }
 
@@ -67,7 +66,9 @@ function insertHtml(listen, image) {
   image = image.startsWith('http://') ? 'https' + image.slice(4) : image;
   image = image ?? 'https://listenbrainz.org/static/img/logo_big.svg';
 
-  const listenHtml = `<p class="listenbrainz">
+  const listenHtml = `
+  <div class="divider"></div>
+  <p class="listenbrainz">
     <img alt="${alt}" title="${alt}" src="${image}">
     <span class="byline">Currently listening to</span>
     <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
