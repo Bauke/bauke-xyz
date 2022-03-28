@@ -46,7 +46,7 @@ impl Userstyles {
       .collect();
 
     let template = Self {
-      page_title: "bauke".to_string(),
+      page_title: "Bauke".to_string(),
       styles,
     };
 
