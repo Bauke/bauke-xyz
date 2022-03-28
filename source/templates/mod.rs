@@ -18,7 +18,7 @@ impl Index {
     create_dir_all(destination.parent().unwrap())?;
 
     let template = Self {
-      page_title: "bauke".to_string(),
+      page_title: "Bauke".to_string(),
     };
 
     write(destination, template.render()?)?;
