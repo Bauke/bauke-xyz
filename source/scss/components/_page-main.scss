@@ -43,7 +43,8 @@
   background-position: center center;
   display: block;
   font-size: 3rem;
-  padding: 2rem;
+  height: 10rem;
+  padding: 1rem;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -54,5 +55,9 @@
     filter: hue-rotate(180deg);
     outline: 2px dotted var(--foreground-1);
     outline-offset: 4px;
+  }
+
+  img {
+    height: 100%;
   }
 }
