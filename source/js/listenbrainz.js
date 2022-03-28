@@ -40,24 +40,24 @@ async function getCurrentListen() {
   const result = await window.fetch('https://api.listenbrainz.org/1/user/BaukeXYZ/playing-now');
   if (!result.ok) {
     console.warn(result.status);
-    return null;
+    return;
   }
 
   const data = await result.json();
   if (data.payload.listens.length === 0) {
-    return null;
+    return;
   }
 
   return data.payload.listens[0];
 }
 
 function insertHtml(listen, image) {
-  if (listen === null) {
+  if (listen === undefined) {
     return;
   }
 
-  const existing = document.querySelector('.listenbrainz');
-  if (existing !== null) {
+  const existing = document.querySelector('.listenbrainz') ?? undefined;
+  if (existing !== undefined) {
     existing.remove();
   }
 
