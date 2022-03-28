@@ -63,8 +63,8 @@ function insertHtml(listen, image) {
   const text = `${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}`;
   const alt = image === undefined ? 'ListenBrainz Logo' : `${text} Cover Art`;
 
-  image = image.startsWith('http://') ? 'https' + image.slice(4) : image;
   image = image ?? 'https://listenbrainz.org/static/img/logo_big.svg';
+  image = image.startsWith('http://') ? 'https' + image.slice(4) : image;
 
   const listenHtml = `
   <div class="divider"></div>
