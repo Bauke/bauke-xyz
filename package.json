@@ -11,10 +11,9 @@
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "postcss": "^8.4.4",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.6.1",
     "stylelint-config-standard-scss": "^3.0.0",
-    "xo": "^0.47.0"
+    "xo": "^0.48.0"
   },
   "stylelint": {
     "extends": [
