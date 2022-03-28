@@ -12,14 +12,14 @@
 
     a {
       border: 2px solid;
-      color: #fff;
+      color: var(--foreground-1);
       padding: 1rem;
       text-decoration: none;
 
       &:hover {
-        background-color: #fff;
-        border-color: #fff;
-        color: #000;
+        background-color: var(--foreground-1);
+        border-color: var(--foreground-1);
+        color: var(--background-1);
       }
     }
   }
