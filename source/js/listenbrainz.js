@@ -32,12 +32,13 @@ function insertHtml(listen) {
     existing.remove();
   }
 
-  const listenHtml = `<div class="listenbrainz">
-  <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
+  const listenHtml = `<p class="listenbrainz">
     <img src="https://listenbrainz.org/static/img/logo_big.svg">
-    ${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}
-  </a>
-</div>`;
+    <span class="byline">Currently listening to</span>
+    <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
+      ${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}
+    </a>
+</p>`;
 
   document.querySelector('.page-main').insertAdjacentHTML('beforeend', listenHtml);
 }
