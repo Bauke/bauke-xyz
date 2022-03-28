@@ -3,5 +3,6 @@
 .page-header {
   @include mixins.responsive-container;
 
-  padding: 1rem;
+  border-bottom: 2px dotted var(--foreground-1);
+  margin-bottom: 2rem;
 }

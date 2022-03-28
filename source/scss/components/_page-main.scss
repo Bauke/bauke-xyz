@@ -3,11 +3,11 @@
 .page-main {
   @include mixins.responsive-container;
 
-  padding: 1rem;
+  margin-bottom: 2rem;
 
   .contact-links {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
 
     @media (max-width: mixins.$medium-breakpoint) {
