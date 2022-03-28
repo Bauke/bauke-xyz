@@ -36,3 +36,23 @@
     }
   }
 }
+
+.driftingnebula {
+  background: url('/assets/driftingnebula 2022-03-07.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  font-size: 3rem;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 4px var(--background-1);
+
+  &:hover {
+    color: var(--foreground-1);
+    filter: hue-rotate(180deg);
+    outline: 2px dotted var(--foreground-1);
+    outline-offset: 4px;
+  }
+}
