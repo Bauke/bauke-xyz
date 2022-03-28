@@ -33,7 +33,7 @@ function insertHtml(listen) {
   }
 
   const listenHtml = `<p class="listenbrainz">
-    <img src="https://listenbrainz.org/static/img/logo_big.svg">
+    <img alt="ListenBrainz Logo" title="ListenBrainz" src="https://listenbrainz.org/static/img/logo_big.svg">
     <span class="byline">Currently listening to</span>
     <a href="https://listenbrainz.org/user/BaukeXYZ/" target="_blank">
       ${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}
