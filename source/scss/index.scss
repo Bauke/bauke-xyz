@@ -23,6 +23,10 @@ button {
   cursor: pointer;
 }
 
+:focus {
+  outline: 2px dotted var(--foreground-1);
+}
+
 .monospace {
   font-family: monospace;
 }
