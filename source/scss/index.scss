@@ -12,12 +12,18 @@ body {
   color: var(--foreground-1);
   font-family: sans-serif;
   font-size: 2rem;
+  padding: 1rem;
 }
 
 a {
   color: var(--foreground-1);
   font-weight: bold;
   text-decoration: 1px dotted underline;
+
+  &:hover {
+    background-color: var(--foreground-1);
+    color: var(--background-1);
+  }
 }
 
 button {

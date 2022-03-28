@@ -15,15 +15,8 @@
     }
 
     a {
-      border: 2px solid;
-      color: var(--foreground-1);
+      border: 2px solid var(--foreground-1);
       padding: 1rem;
-
-      &:hover {
-        background-color: var(--foreground-1);
-        border-color: var(--foreground-1);
-        color: var(--background-1);
-      }
     }
   }
 }
