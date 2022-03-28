@@ -12,6 +12,10 @@
   padding: 1rem;
   width: fit-content;
 
+  @media (max-width: mixins.$medium-breakpoint) {
+    width: 100%;
+  }
+
   a {
     width: fit-content;
   }
