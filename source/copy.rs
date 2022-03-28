@@ -20,6 +20,7 @@ impl Copy {
     }
 
     let dirs_to_copy = vec![
+      (source_dir.join("assets"), &public_dir),
       (source_dir.join("js"), &public_dir),
       (build_dir.join("userstyles"), &public_dir),
     ];
