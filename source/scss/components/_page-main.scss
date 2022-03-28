@@ -1,4 +1,8 @@
+@use 'mixins';
+
 .page-main {
+  @include mixins.responsive-container;
+
   padding: 1rem;
 
   .contact-links {

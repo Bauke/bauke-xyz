@@ -1,3 +1,7 @@
+@use 'mixins';
+
 .page-footer {
+  @include mixins.responsive-container;
+
   margin-top: 1rem;
 }
