@@ -1,6 +1,10 @@
 window.addEventListener('DOMContentLoaded', async () => {
   const loop = async () => {
     const listen = await getCurrentListen();
+    if (listen === undefined) {
+      return;
+    }
+
     const image = await getCoverArt(listen);
     insertHtml(listen, image);
   };
