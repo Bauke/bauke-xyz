@@ -5,7 +5,13 @@ window.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const image = await getCoverArt(listen);
+    let image;
+    try {
+      image = await getCoverArt(listen);
+    } catch (error) {
+      console.warn(error);
+    }
+
     insertHtml(listen, image);
   };
 
