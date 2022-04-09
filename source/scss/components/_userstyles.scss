@@ -6,6 +6,7 @@
   padding: 0;
 
   .style {
+    background-color: var(--background-2);
     border: 2px solid var(--foreground-1);
     padding: 1rem;
 
@@ -28,7 +29,7 @@
         &:hover {
           background-color: var(--foreground-1);
           border-color: var(--foreground-1);
-          color: var(--background-1);
+          color: var(--background-2);
         }
       }
     }
