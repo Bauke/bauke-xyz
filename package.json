@@ -1,7 +1,5 @@
 {
-  "name": "bauke.xyz",
-  "version": "0.0.0",
-  "license": "AGPL-3.0-or-later",
+  "private": "true",
   "scripts": {
     "deploy": "cargo run --release -q && pnpm deploy:netlify",
     "deploy:netlify": "netlify deploy --prod --dir 'public/' -s bauke.xyz",
@@ -11,9 +9,9 @@
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "stylelint": "^14.6.1",
-    "stylelint-config-standard-scss": "^3.0.0",
-    "xo": "^0.48.0"
+    "stylelint": "^14.12.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "xo": "^0.52.3"
   },
   "stylelint": {
     "extends": [

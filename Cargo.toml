@@ -2,11 +2,12 @@
 
 [package]
 name = "bauke-xyz"
-description = "https://bauke.xyz"
-version = "1.0.0"
-edition = "2018"
-repository = "https://git.holllo.cc/Bauke/bauke.xyz"
+description = "Bauke's website."
+repository = "https://git.bauke.xyz/Bauke/bauke-xyz"
 license = "AGPL-3.0-or-later"
+version = "1.0.0"
+authors = ["Bauke <me@bauke.xyz>"]
+edition = "2021"
 
 [[bin]]
 name = "bauke-xyz"
@@ -14,6 +15,6 @@ path = "source/main.rs"
 
 [dependencies]
 askama = "0.11.1"
-color-eyre = "0.6.1"
+color-eyre = "0.6.2"
 rsass = "0.23.4"
 userstyles = { git = "https://git.holllo.cc/Bauke/userstyles" }
