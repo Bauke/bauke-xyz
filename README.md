@@ -8,7 +8,7 @@ Requires working installations of [Rust and Cargo](https://www.rust-lang.org/lea
 
 * Install the dependencies with `pnpm install`.
 * Build the website with `cargo run`.
-* Deploy to Netlify with `pnpm deploy`.
+* Deploy to Netlify with `pnpm run deploy`.
 * Test the code with `pnpm test`.
 
 ## License
