@@ -1,2 +1,10 @@
 # Redirect any non-existing files to /
-/* / 200
+/* / 404
+
+# Other redirects
+/driftingnebula https://driftingnebula.com
+/git https://git.bauke.xyz
+/gitea https://git.bauke.xyz
+/github https://github.com/Bauke
+/gitlab https://gitlab.com/Bauke
+/holllo https://holllo.org
