@@ -17,4 +17,7 @@ path = "source/main.rs"
 askama = "0.11.1"
 color-eyre = "0.6.2"
 rsass = "0.23.4"
-userstyles = { git = "https://git.bauke.xyz/Bauke/userstyles" }
+
+[dependencies.userstyles]
+git = "https://git.bauke.xyz/Bauke/userstyles"
+rev = "8aa9ad3"
