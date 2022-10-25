@@ -26,32 +26,3 @@ impl Index {
     Ok(())
   }
 }
-
-#[derive(Debug, Template)]
-#[template(path = "userstyles.html")]
-pub struct Userstyles {
-  pub page_title: String,
-  pub styles: Vec<userstyles::Userstyle>,
-}
-
-impl Userstyles {
-  pub fn write(public_dir: &Path) -> Result<()> {
-    let destination = public_dir.join("userstyles/index.html");
-    create_dir_all(destination.parent().unwrap())?;
-
-    let styles = userstyles::ALL_USERSTYLES
-      .iter()
-      .map(|target| userstyles::Userstyle::load(target))
-      .flatten()
-      .collect();
-
-    let template = Self {
-      page_title: "Bauke".to_string(),
-      styles,
-    };
-
-    write(destination, template.render()?)?;
-
-    Ok(())
-  }
-}

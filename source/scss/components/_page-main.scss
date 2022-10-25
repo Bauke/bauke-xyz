@@ -1,63 +1,41 @@
 @use 'mixins';
 
 .page-main {
-  @include mixins.responsive-container;
-
-  margin-bottom: 2rem;
-
-  .contact-links {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+  a {
+    align-items: center;
+    display: flex;
+    height: calc(50vh - 128px);
+    justify-content: center;
+    padding: 64px;
+    text-decoration: none;
 
     @media (max-width: mixins.$medium-breakpoint) {
-      grid-template-columns: repeat(1, 1fr);
+      height: 50vh;
     }
 
-    a {
-      @include mixins.patterned-shadow(0.5rem);
-
-      background-color: var(--background-2);
-      border: 2px solid var(--foreground-1);
-      padding: 1rem;
-      position: relative;
+    &.driftingnebula {
+      background: url('/assets/driftingnebula 2022-03-09.jpeg');
+      background-position: center center;
+      background-repeat: no-repeat;
 
       &:hover {
-        background-color: var(--foreground-1);
-      }
-
-      &::before {
-        content: attr(data-label);
-        font-size: 50%;
-        position: absolute;
-        right: 4px;
-        top: 4px;
+        filter: hue-rotate(180deg);
       }
     }
-  }
-}
 
-.driftingnebula {
-  background: url('/assets/driftingnebula 2022-03-07.jpeg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  display: block;
-  font-size: 3rem;
-  height: 10rem;
-  padding: 1rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-shadow: 0 0 4px var(--background-1);
+    &.holllo {
+      background: url('/assets/holllo-mark-square-pattern.png');
+      background-color: #1f1731;
+      background-repeat: repeat;
+      background-size: 48px;
 
-  &:hover {
-    color: var(--foreground-1);
-    filter: hue-rotate(180deg);
-    outline: 2px dotted var(--foreground-1);
-    outline-offset: 4px;
-  }
+      &:hover {
+        filter: grayscale(100%);
+      }
+    }
 
-  img {
-    height: 100%;
+    img {
+      max-width: 256px;
+    }
   }
 }

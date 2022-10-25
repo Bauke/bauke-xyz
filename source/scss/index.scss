@@ -5,25 +5,23 @@ html {
 }
 
 body {
-  --background-1: #52d168;
-  --background-2: #60f079;
-  --foreground-1: #1d2623;
+  --anchor-color: #f0f;
+  --anchor-hover: #000;
 
-  background-color: var(--background-1);
-  color: var(--foreground-1);
+  background-color: #000;
+  color: #000;
   font-family: sans-serif;
   font-size: 2rem;
-  padding: 2rem;
 }
 
 a {
-  color: var(--foreground-1);
+  color: var(--anchor-color);
   font-weight: bold;
-  text-decoration: 1px dotted underline;
+  text-decoration: 2px dotted underline;
 
   &:hover {
-    background-color: var(--foreground-1);
-    color: var(--background-2);
+    background-color: var(--anchor-color);
+    color: var(--anchor-hover);
   }
 }
 
@@ -32,7 +30,7 @@ button {
 }
 
 :focus {
-  outline: 2px dotted var(--foreground-1);
+  outline: 2px dotted #f0f;
 }
 
 .monospace {
@@ -45,9 +43,7 @@ button {
   margin-top: 2rem;
 }
 
-@use 'components/errors';
 @use 'components/page-footer';
 @use 'components/page-header';
 @use 'components/page-main';
 @use 'components/listenbrainz';
-@use 'components/userstyles';

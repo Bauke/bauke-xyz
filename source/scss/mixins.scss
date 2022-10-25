@@ -10,20 +10,3 @@ $large-breakpoint: 1200px;
     width: 100%;
   }
 }
-
-@mixin patterned-shadow($size) {
-  position: relative;
-
-  &::after {
-    --shadow-size: #{$size};
-
-    background: url('/assets/shadow-pattern.png') repeat;
-    content: '';
-    height: 100%;
-    left: var(--shadow-size);
-    position: absolute;
-    top: var(--shadow-size);
-    width: 100%;
-    z-index: -1;
-  }
-}

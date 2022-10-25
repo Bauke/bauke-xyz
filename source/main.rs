@@ -18,7 +18,6 @@ fn main() -> Result<()> {
 
   build_userstyles(&build_dir)?;
   templates::Index::write(&public_dir)?;
-  templates::Userstyles::write(&public_dir)?;
   scss::Scss::write(&public_dir, &source_dir)?;
   copy::Copy::write(&build_dir, &public_dir, &source_dir)?;
 

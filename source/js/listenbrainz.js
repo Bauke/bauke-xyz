@@ -66,7 +66,6 @@ function insertHtml(listen, image) {
 
   const existing = document.querySelector('.listenbrainz') ?? undefined;
   if (existing !== undefined) {
-    existing.previousElementSibling.remove();
     existing.remove();
   }
 
@@ -77,7 +76,6 @@ function insertHtml(listen, image) {
   image = image.startsWith('http://') ? 'https' + image.slice(4) : image;
 
   const listenHtml = `
-  <div class="divider"></div>
   <p class="listenbrainz">
     <img alt="${alt}" title="${alt}" src="${image}">
     <span class="byline">Currently listening to</span>
@@ -86,5 +84,5 @@ function insertHtml(listen, image) {
     </a>
 </p>`;
 
-  document.querySelector('.page-main').insertAdjacentHTML('beforeend', listenHtml);
+  document.querySelector('.page-header').insertAdjacentHTML('beforeend', listenHtml);
 }
