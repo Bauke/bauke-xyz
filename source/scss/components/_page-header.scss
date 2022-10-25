@@ -13,6 +13,10 @@
 
   @media (max-width: mixins.$medium-breakpoint) {
     height: 50vh;
+
+    .subtitle {
+      flex-direction: column;
+    }
   }
 
   h1 {
