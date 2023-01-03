@@ -9,27 +9,19 @@
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
-    "stylelint": "^14.12.1",
-    "stylelint-config-standard-scss": "^5.0.0",
-    "xo": "^0.52.3"
+    "@bauke/eslint-config": "^0.1.2",
+    "@bauke/prettier-config": "^0.1.2",
+    "@bauke/stylelint-config": "^0.1.2",
+    "stylelint": "^14.16.1",
+    "xo": "^0.53.1"
   },
+  "prettier": "@bauke/prettier-config",
   "stylelint": {
-    "extends": [
-      "stylelint-config-standard-scss"
-    ],
-    "rules": {
-      "string-quotes": "single"
-    }
+    "extends": "@bauke/stylelint-config"
   },
   "xo": {
-    "pretty": true,
-    "globals": [
-      "document",
-      "window"
-    ],
-    "rules": {
-      "capitalized-comments": "off"
-    },
+    "extends": "@bauke/eslint-config",
+    "prettier": true,
     "space": true
   }
 }
