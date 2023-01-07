@@ -1,0 +1,63 @@
+@use "mixins";
+@use "reset";
+
+body {
+  // Colors.
+  --foreground: #f1ebff;
+  --background: #1f003e;
+  --anchor: #89c3ff;
+
+  // Spacing constants.
+  --spacing-small: 4px;
+  --spacing-medium: 8px;
+  --spacing-large: 16px;
+
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+a {
+  color: var(--anchor);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  margin-left: 1rem;
+}
+
+iframe,
+h2 {
+  margin-top: var(--spacing-large);
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  border: 2px dashed;
+  display: block;
+  width: 100%;
+  margin-bottom: var(--spacing-large);
+  max-width: 1280px;
+  padding: var(--spacing-medium);
+}
+
+.page-header {
+  border-bottom: 2px dashed;
+  padding: var(--spacing-large);
+
+  h1 {
+    @include mixins.responsive-container;
+  }
+}
+
+.page-main {
+  @include mixins.responsive-container;
+}
+
+.timestamp-link {
+  font-family: monospace;
+}

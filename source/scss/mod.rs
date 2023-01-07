@@ -17,7 +17,7 @@ impl Scss {
     create_dir_all(&css_dir)?;
 
     let scss_dir = source_dir.join("scss");
-    let scss_filenames = vec!["index", "modern-normalize"];
+    let scss_filenames = vec!["index", "modern-normalize", "video"];
 
     let format = Format {
       precision: 5,

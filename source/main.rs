@@ -8,6 +8,7 @@ use color_eyre::{install, Result};
 mod copy;
 mod scss;
 mod templates;
+mod video;
 
 fn main() -> Result<()> {
   install()?;
@@ -20,6 +21,7 @@ fn main() -> Result<()> {
   templates::Index::write(&public_dir)?;
   scss::Scss::write(&public_dir, &source_dir)?;
   copy::Copy::write(&build_dir, &public_dir, &source_dir)?;
+  video::write_all(&public_dir)?;
 
   Ok(())
 }

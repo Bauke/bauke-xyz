@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/video.css">
+{% endblock %}
+
+{% block body %}
+<header class="page-header">
+  <h1>{{ page_title }}</h1>
+</header>
+
+<main class="page-main">
+  {{ rendered_markdown|safe }}
+
+  {% if let Some(speedrun) = speedrun %}
+    <h2>Speedrun</h2>
+    <ul>
+      <li>
+        <a href="{{ speedrun.entry }}" target="_blank">Entry</a>
+      </li>
+      <li>
+        <a href="{{ speedrun.leaderboard }}" target="_blank">Leaderboard</a>
+      </li>
+    </ul>
+
+    {% if let Some(mods) = speedrun.mods %}
+    <h2>Mods</h2>
+    <ul>
+      {% for (name, id) in mods %}
+      <li>
+        <a href="https://drg.mod.io/{{ id }}" target="_blank">{{ name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if let Some(chapters) = speedrun.chapters %}
+    <h2>Chapters</h2>
+    <ul>
+      {% for (timestamp, text) in chapters %}
+      <li>
+        <p>
+          <a
+            class="timestamp-link"
+            href="https://youtu.be/{{ video_id }}?t={{ timestamp|timestamp_to_seconds }}"
+            target="_blank"
+          >{{ timestamp }}</a>
+          {{ text }}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ video_id }}"
+      title="Embedded YouTube video player"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  {% endif %}
+
+</main>
+{% endblock %}
