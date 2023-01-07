@@ -12,6 +12,7 @@
     "@bauke/eslint-config": "^0.1.2",
     "@bauke/prettier-config": "^0.1.2",
     "@bauke/stylelint-config": "^0.1.2",
+    "netlify-cli": "^12.5.0",
     "stylelint": "^14.16.1",
     "xo": "^0.53.1"
   },
