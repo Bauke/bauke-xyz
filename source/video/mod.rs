@@ -39,12 +39,12 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
           continue;
         }
 
-        let file_contents = fs::read_to_string(file_path)?;
+        let file_contents = fs::read_to_string(&file_path)?;
         let (video_data, markdown) =
           match toml_frontmatter::parse::<VideoData>(&file_contents) {
             Ok(parsed) => parsed,
             Err(error) => {
-              println!("{error}");
+              println!("{:?} {}", file_path.file_name().unwrap(), error);
               continue;
             }
           };
