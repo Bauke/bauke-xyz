@@ -26,9 +26,10 @@
     {% if let Some(mods) = speedrun.mods %}
     <h2>Mods</h2>
     <ul>
-      {% for (name, id) in mods %}
+      {% for id in mods %}
+      {% let (mod_link, mod_title) = id|drg_mod %}
       <li>
-        <a href="https://drg.mod.io/{{ id }}" target="_blank">{{ name }}</a>
+        <a href="{{ mod_link }}" target="_blank">{{ mod_title }}</a>
       </li>
       {% endfor %}
     </ul>

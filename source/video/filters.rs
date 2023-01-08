@@ -3,6 +3,19 @@ Filters for Askama templates.
 */
 
 /**
+Get the DRG mod link and title from a given ID.
+*/
+pub fn drg_mod(mod_id: &str) -> askama::Result<(String, &str)> {
+  let mods = std::collections::HashMap::<_, _>::from_iter([
+    ("drglib", "DRGLib"),
+    ("simplemissiontimer", "SimpleMissionTimer"),
+  ]);
+
+  let mod_title = mods.get(mod_id).unwrap();
+  Ok((format!("https://drg.mod.io/{mod_id}"), mod_title))
+}
+
+/**
 Turn a timestamp with format `mm:ss` into its total seconds.
 
 ## Examples

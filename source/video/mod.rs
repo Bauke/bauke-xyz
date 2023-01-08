@@ -25,7 +25,7 @@ pub struct SpeedrunData {
   pub chapters: Option<Vec<(String, String)>>,
   pub entry: String,
   pub leaderboard: String,
-  pub mods: Option<Vec<(String, String)>>,
+  pub mods: Option<Vec<String>>,
 }
 
 pub fn write_all(public_dir: &Path) -> Result<()> {
