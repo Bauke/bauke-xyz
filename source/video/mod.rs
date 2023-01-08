@@ -41,7 +41,13 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
 
         let file_contents = fs::read_to_string(file_path)?;
         let (video_data, markdown) =
-          toml_frontmatter::parse::<VideoData>(&file_contents).unwrap();
+          match toml_frontmatter::parse::<VideoData>(&file_contents) {
+            Ok(parsed) => parsed,
+            Err(error) => {
+              println!("{error}");
+              continue;
+            }
+          };
         data.push((video_data, markdown.to_string()));
       }
     }
