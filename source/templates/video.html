@@ -26,8 +26,8 @@
     {% if let Some(mods) = speedrun.mods %}
     <h2>Mods</h2>
     <ul>
-      {% for id in mods %}
-      {% let (mod_link, mod_title) = id|drg_mod %}
+      {% for mod_id in mods %}
+      {% let (mod_link, mod_title) = mod_id|drg_mod %}
       <li>
         <a href="{{ mod_link }}" target="_blank">{{ mod_title }}</a>
       </li>
