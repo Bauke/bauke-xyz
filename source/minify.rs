@@ -1,7 +1,7 @@
 use color_eyre::Result;
 
 /**
-Minify HTML using [`minify_html`].
+Minify HTML using [`minify-html`].
 */
 pub fn html(data: String) -> Result<String> {
   let minify_config = minify_html::Cfg {
