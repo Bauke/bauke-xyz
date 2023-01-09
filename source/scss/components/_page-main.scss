@@ -1,4 +1,4 @@
-@use 'mixins';
+@use "mixins";
 
 .page-main {
   a {
@@ -14,7 +14,7 @@
     }
 
     &.driftingnebula {
-      background: url('/assets/driftingnebula 2022-03-09.jpeg');
+      background: url("/assets/driftingnebula 2022-03-09.jpeg");
       background-position: center center;
       background-repeat: no-repeat;
 
@@ -24,7 +24,7 @@
     }
 
     &.holllo {
-      background: url('/assets/holllo-mark-square-pattern.png');
+      background: url("/assets/holllo-mark-square-pattern.png");
       background-color: #1f1731;
       background-repeat: repeat;
       background-size: 48px;

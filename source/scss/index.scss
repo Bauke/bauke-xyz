@@ -1,4 +1,4 @@
-@use 'reset';
+@use "reset";
 
 html {
   font-size: 62.5%;
@@ -43,7 +43,7 @@ button {
   margin-top: 2rem;
 }
 
-@use 'components/page-footer';
-@use 'components/page-header';
-@use 'components/page-main';
-@use 'components/listenbrainz';
+@use "components/page-footer";
+@use "components/page-header";
+@use "components/page-main";
+@use "components/listenbrainz";

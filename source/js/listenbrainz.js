@@ -1,4 +1,6 @@
-window.addEventListener('DOMContentLoaded', async () => {
+/* global document window */
+
+window.addEventListener("DOMContentLoaded", async () => {
   const loop = async () => {
     const listen = await getCurrentListen();
     if (listen === undefined) {
@@ -26,11 +28,14 @@ async function getCoverArt(listen) {
     return;
   }
 
-  const result = await window.fetch(`https://coverartarchive.org/release/${releaseMbid}`, {
-    headers: {
-      Accept: 'application/json',
+  const result = await window.fetch(
+    `https://coverartarchive.org/release/${releaseMbid}`,
+    {
+      headers: {
+        Accept: "application/json",
+      },
     },
-  });
+  );
   if (!result.ok) {
     return;
   }
@@ -41,11 +46,15 @@ async function getCoverArt(listen) {
   }
 
   const thumbnails = data.images[0].thumbnails;
-  return thumbnails.small ?? thumbnails['250'] ?? thumbnails['500'] ?? undefined;
+  return (
+    thumbnails.small ?? thumbnails["250"] ?? thumbnails["500"] ?? undefined
+  );
 }
 
 async function getCurrentListen() {
-  const result = await window.fetch('https://api.listenbrainz.org/1/user/BaukeXYZ/playing-now');
+  const result = await window.fetch(
+    "https://api.listenbrainz.org/1/user/BaukeXYZ/playing-now",
+  );
   if (!result.ok) {
     console.warn(result.status);
     return;
@@ -64,16 +73,16 @@ function insertHtml(listen, image) {
     return;
   }
 
-  const existing = document.querySelector('.listenbrainz') ?? undefined;
+  const existing = document.querySelector(".listenbrainz") ?? undefined;
   if (existing !== undefined) {
     existing.remove();
   }
 
   const text = `${listen.track_metadata.artist_name} - ${listen.track_metadata.track_name}`;
-  const alt = image === undefined ? 'ListenBrainz Logo' : `${text} Cover Art`;
+  const alt = image === undefined ? "ListenBrainz Logo" : `${text} Cover Art`;
 
-  image = image ?? 'https://listenbrainz.org/static/img/logo_big.svg';
-  image = image.startsWith('http://') ? 'https' + image.slice(4) : image;
+  image = image ?? "https://listenbrainz.org/static/img/logo_big.svg";
+  image = image.startsWith("http://") ? "https" + image.slice(4) : image;
 
   const listenHtml = `
   <p class="listenbrainz">
@@ -84,5 +93,7 @@ function insertHtml(listen, image) {
     </a>
 </p>`;
 
-  document.querySelector('.page-header').insertAdjacentHTML('beforeend', listenHtml);
+  document
+    .querySelector(".page-header")
+    .insertAdjacentHTML("beforeend", listenHtml);
 }
