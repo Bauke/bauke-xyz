@@ -30,7 +30,7 @@ fn main() -> Result<()> {
 fn build_userstyles(build_dir: &Path) -> Result<()> {
   for target in userstyles::ALL_USERSTYLES {
     let style = userstyles::Userstyle::load(target)?;
-    let style_name = style.metadata.name.to_lowercase().replace(" ", "-");
+    let style_name = style.metadata.name.to_lowercase().replace(' ', "-");
 
     let style_dir = build_dir.join("userstyles");
     fs::create_dir_all(&style_dir)?;
