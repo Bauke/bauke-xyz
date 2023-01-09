@@ -68,7 +68,11 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
       speedrun: video_data.speedrun,
       video_id: video_data.id,
     };
-    fs::write(video_dir.join("index.html"), template.render()?)?;
+
+    fs::write(
+      video_dir.join("index.html"),
+      crate::minify::html(template.render()?)?,
+    )?;
   }
 
   Ok(())

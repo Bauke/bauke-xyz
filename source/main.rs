@@ -6,6 +6,7 @@ use std::{
 use color_eyre::{install, Result};
 
 mod copy;
+mod minify;
 mod scss;
 mod templates;
 mod video;

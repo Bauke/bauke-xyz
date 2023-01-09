@@ -21,7 +21,7 @@ impl Index {
       page_title: "Bauke".to_string(),
     };
 
-    write(destination, template.render()?)?;
+    write(destination, crate::minify::html(template.render()?)?)?;
 
     Ok(())
   }

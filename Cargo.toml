@@ -17,6 +17,7 @@ path = "source/main.rs"
 askama = "0.11.1"
 color-eyre = "0.6.2"
 comrak = "0.15.0"
+minify-html = "0.10.7"
 rsass = "0.23.4"
 toml-frontmatter = "0.1.0"
 
