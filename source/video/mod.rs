@@ -1,6 +1,10 @@
 use std::{fs, path::Path};
 
-use {askama::Template, color_eyre::Result, serde::Deserialize};
+use {
+  askama::Template,
+  color_eyre::{eyre::eyre, Result},
+  serde::Deserialize,
+};
 
 mod filters;
 
@@ -55,8 +59,11 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
     data
   };
 
+  let video_dir = public_dir.join("v");
+  let expected_video_count = video_datas.len();
+
   for (video_data, markdown) in video_datas {
-    let video_dir = public_dir.join("v").join(&video_data.id);
+    let video_dir = video_dir.join(&video_data.id.to_lowercase());
     fs::create_dir_all(&video_dir)?;
 
     let template = VideoTemplate {
@@ -73,6 +80,15 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
       video_dir.join("index.html"),
       crate::minify::html(template.render()?)?,
     )?;
+  }
+
+  let actual_video_count = fs::read_dir(video_dir)?.count();
+  if expected_video_count != actual_video_count {
+    return Err(eyre!(
+      "Expected {} videos, found {}",
+      expected_video_count,
+      actual_video_count
+    ));
   }
 
   Ok(())
