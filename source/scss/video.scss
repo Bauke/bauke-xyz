@@ -8,9 +8,9 @@ body {
   --anchor: #89c3ff;
 
   // Spacing constants.
-  --spacing-small: 4px;
-  --spacing-medium: 8px;
-  --spacing-large: 16px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
 
   background-color: var(--background);
   color: var(--foreground);
@@ -42,12 +42,12 @@ iframe {
   width: 100%;
   margin-bottom: var(--spacing-large);
   max-width: 1280px;
-  padding: var(--spacing-medium);
+  padding: var(--spacing-small);
 }
 
 .page-header {
   border-bottom: 2px dashed;
-  padding: var(--spacing-large);
+  padding: var(--spacing-medium);
 
   h1 {
     @include mixins.responsive-container;
