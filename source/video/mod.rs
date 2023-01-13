@@ -18,10 +18,12 @@ pub struct VideoTemplate {
 }
 
 #[derive(Debug, Deserialize)]
-struct VideoData {
+pub struct VideoData {
   pub id: String,
   pub page_title: String,
   pub speedrun: Option<SpeedrunData>,
+  #[serde(default)]
+  pub tags: Vec<String>,
 }
 
 #[derive(Debug, Deserialize)]

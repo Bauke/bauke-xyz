@@ -1,6 +1,7 @@
 ---toml
 id = "1rQoSxwLklw"
 page_title = "Hazard 5 Solo Mining Expedition Speedrun (200 Morkite, 3:16)"
+tags = ["Deep Rock Galactic", "Speedrun"]
 
 [speedrun]
 entry = "https://www.speedrun.com/deep_rock_galactic/run/yjxw5xdz"

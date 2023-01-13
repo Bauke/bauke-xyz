@@ -1,6 +1,7 @@
 ---toml
 id = "r-_QyaigSgg"
 page_title = "Solo Salvage Operation Speedrun (7:56)"
+tags = ["Deep Rock Galactic", "Speedrun"]
 
 [speedrun]
 entry = "https://www.speedrun.com/deep_rock_galactic/run/z5ve6kgm"

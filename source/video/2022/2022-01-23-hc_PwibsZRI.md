@@ -1,6 +1,7 @@
 ---toml
 id = "hc_PwibsZRI"
 page_title = "Solo Elimination Speedrun (2:51)"
+tags = ["Deep Rock Galactic", "Speedrun"]
 
 [speedrun]
 entry = "https://www.speedrun.com/deep_rock_galactic/run/mej3r92y"

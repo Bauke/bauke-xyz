@@ -1,6 +1,7 @@
 ---toml
 id = "YCjH0GvytBc"
 page_title = "Solo Industrial Sabotage Speedrun (9:47)"
+tags = ["Deep Rock Galactic", "Speedrun"]
 
 [speedrun]
 entry = "https://www.speedrun.com/deep_rock_galactic/run/ylenwn3z"
