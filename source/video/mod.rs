@@ -11,26 +11,47 @@ mod filters;
 #[derive(Debug, Template)]
 #[template(path = "video.html")]
 pub struct VideoTemplate {
+  /// The title of the page.
   pub page_title: String,
+
+  /// Markdown rendered by [`comrak`].
   pub rendered_markdown: String,
+
+  /// Data for a speedrun video.
   pub speedrun: Option<SpeedrunData>,
+
+  /// The YouTube video ID.
   pub video_id: String,
 }
 
 #[derive(Debug, Deserialize)]
 pub struct VideoData {
+  /// The YouTube video ID.
   pub id: String,
+
+  /// The title of the page.
   pub page_title: String,
+
+  /// Data for a speedrun video.
   pub speedrun: Option<SpeedrunData>,
+
+  /// Tags for the video.
   #[serde(default)]
   pub tags: Vec<String>,
 }
 
 #[derive(Debug, Deserialize)]
 pub struct SpeedrunData {
+  /// Video chapters as with timestamps and chapter titles.
   pub chapters: Option<Vec<(String, String)>>,
+
+  /// A link to the entry for this specific speedrun.
   pub entry: String,
+
+  /// A link to the leaderboard for this speedrun's category.
   pub leaderboard: String,
+
+  /// Deep Rock Galactic mods used in the run.
   pub mods: Option<Vec<String>>,
 }
 
