@@ -59,7 +59,7 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
   let video_datas = {
     let mut data = vec![];
 
-    for dir in ["2022"] {
+    for dir in ["2022", "2023"] {
       for file in fs::read_dir(format!("source/video/{dir}"))? {
         let file_path = file?.path();
         if file_path.extension().unwrap() != "md" {
