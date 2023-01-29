@@ -52,14 +52,13 @@
       {% endfor %}
     </ul>
     {% endif %}
-
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/{{ video_id }}"
-      title="Embedded YouTube video player"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
   {% endif %}
 
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{ video_id }}"
+    title="Embedded YouTube video player"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
 </main>
 {% endblock %}
