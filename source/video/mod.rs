@@ -11,6 +11,9 @@ mod filters;
 #[derive(Debug, Template)]
 #[template(path = "video.html")]
 pub struct VideoTemplate {
+  /// Deep Rock Galactic data.
+  pub drg: Option<DeepRockGalacticData>,
+
   /// The title of the page.
   pub page_title: String,
 
@@ -26,6 +29,9 @@ pub struct VideoTemplate {
 
 #[derive(Debug, Deserialize)]
 pub struct VideoData {
+  /// Deep Rock Galactic data.
+  pub drg: Option<DeepRockGalacticData>,
+
   /// The YouTube video ID.
   pub id: String,
 
@@ -51,6 +57,12 @@ pub struct SpeedrunData {
   /// A link to the leaderboard for this speedrun's category.
   pub leaderboard: String,
 
+  /// Deep Rock Galactic mods used in the run.
+  pub mods: Option<Vec<String>>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct DeepRockGalacticData {
   /// Deep Rock Galactic mods used in the run.
   pub mods: Option<Vec<String>>,
 }
@@ -90,6 +102,7 @@ pub fn write_all(public_dir: &Path) -> Result<()> {
     fs::create_dir_all(&video_dir)?;
 
     let template = VideoTemplate {
+      drg: video_data.drg,
       page_title: video_data.page_title,
       rendered_markdown: comrak::markdown_to_html(
         &markdown,
