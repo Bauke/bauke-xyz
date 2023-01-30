@@ -24,15 +24,7 @@
     </ul>
 
     {% if let Some(mods) = speedrun.mods %}
-    <h2>Mods</h2>
-    <ul>
-      {% for mod_id in mods %}
-      {% let (mod_link, mod_title) = mod_id|drg_mod %}
-      <li>
-        <a href="{{ mod_link }}" target="_blank">{{ mod_title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
+      {% include "drg-mods.html" %}
     {% endif %}
 
     {% if let Some(chapters) = speedrun.chapters %}
@@ -51,6 +43,12 @@
       </li>
       {% endfor %}
     </ul>
+    {% endif %}
+  {% endif %}
+
+  {% if let Some(drg) = drg %}
+    {% if let Some(mods) = drg.mods %}
+      {% include "drg-mods.html" %}
     {% endif %}
   {% endif %}
 
