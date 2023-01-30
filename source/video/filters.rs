@@ -7,6 +7,7 @@ Get the DRG mod link and title from a given ID.
 */
 pub fn drg_mod(mod_id: &str) -> askama::Result<(String, &str)> {
   let mods = std::collections::HashMap::<_, _>::from_iter([
+    ("brighter-objects", "Brighter Objects"),
     ("drglib", "DRGLib"),
     ("simplemissiontimer", "SimpleMissionTimer"),
   ]);
