@@ -9,7 +9,7 @@
     padding: 64px;
     text-decoration: none;
 
-    @media (max-width: mixins.$medium-breakpoint) {
+    @media (max-width: mixins.$breakpoint) {
       height: 50vh;
     }
 
